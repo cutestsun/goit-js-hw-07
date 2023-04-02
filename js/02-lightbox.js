@@ -15,20 +15,8 @@ const galleryItemsEl = galleryItems
 
 galleryEl.innerHTML = galleryItemsEl;
 
-galleryEl.addEventListener("click", onGalleryClick);
-
-function onGalleryClick(evt) {
-  evt.preventDefault();
-
-  if (!evt.target.classList.contains("gallery__image")) {
-    return;
-  }
-
-  let gallery = new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionPosition: "bottom",
-    captionDelay: 250,
-  });
-
-  gallery.on("show.simplelightbox");
-}
+let gallery = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionPosition: "bottom",
+  captionDelay: 250,
+});
